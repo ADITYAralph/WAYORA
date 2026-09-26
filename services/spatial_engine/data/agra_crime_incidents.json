@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "dataset_name": "Agra Harmonized Kaggle Tourism Crime Dataset",
+    "record_count": 10,
+    "region": "Agra Metropolitan",
+    "format": "Kaggle Standard Indian Crimes Schema"
+  },
+  "records": [
+    {
+      "incident_id": "CR-AGRA-2025-01",
+      "city": "Agra",
+      "ward": "Yamuna Kinara",
+      "crime_type": "Robbery/Snatching",
+      "latitude": 27.185,
+      "longitude": 78.035,
+      "date_time": "2025-11-14 21:30:00",
+      "severity_score": 8.5
+    },
+    {
+      "incident_id": "CR-AGRA-2025-02",
+      "city": "Agra",
+      "ward": "Yamuna Kinara",
+      "crime_type": "Theft after Dark",
+      "latitude": 27.1865,
+      "longitude": 78.036,
+      "date_time": "2025-12-02 22:15:00",
+      "severity_score": 7.5
+    },
+    {
+      "incident_id": "CR-AGRA-2025-03",
+      "city": "Agra",
+      "ward": "Strachey Bridge",
+      "crime_type": "Assault/Extortion",
+      "latitude": 27.189,
+      "longitude": 78.038,
+      "date_time": "2026-01-10 23:45:00",
+      "severity_score": 9.0
+    },
+    {
+      "incident_id": "CR-AGRA-2025-04",
+      "city": "Agra",
+      "ward": "Keetham Forest",
+      "crime_type": "Unauthorized Night Trespass",
+      "latitude": 27.251,
+      "longitude": 78.842,
+      "date_time": "2025-10-18 20:00:00",
+      "severity_score": 6.5
+    },
+    {
+      "incident_id": "CR-AGRA-2025-05",
+      "city": "Agra",
+      "ward": "Keetham Forest",
+      "crime_type": "Distress / Lost in Forest",
+      "latitude": 27.253,
+      "longitude": 77.844,
+      "date_time": "2025-11-28 19:30:00",
+      "severity_score": 8.0
+    },
+    {
+      "incident_id": "CR-AGRA-2025-06",
+      "city": "Agra",
+      "ward": "Runakta",
+      "crime_type": "Pickpocketing",
+      "latitude": 27.238,
+      "longitude": 77.882,
+      "date_time": "2025-09-12 17:40:00",
+      "severity_score": 4.5
+    },
+    {
+      "incident_id": "CR-AGRA-2025-07",
+      "city": "Agra",
+      "ward": "Runakta Bazaar",
+      "crime_type": "Unauthorized Tout Harassment",
+      "latitude": 27.237,
+      "longitude": 77.881,
+      "date_time": "2025-12-20 18:20:00",
+      "severity_score": 5.0
+    },
+    {
+      "incident_id": "CR-AGRA-2025-08",
+      "city": "Agra",
+      "ward": "Fatehabad Road Alleys",
+      "crime_type": "Tourist Extortion / Forced Shopping",
+      "latitude": 27.165,
+      "longitude": 78.028,
+      "date_time": "2026-01-15 15:30:00",
+      "severity_score": 7.8
+    },
+    {
+      "incident_id": "CR-AGRA-2025-09",
+      "city": "Agra",
+      "ward": "Keetham Station Road",
+      "crime_type": "Vehicle Theft / Vandalism",
+      "latitude": 27.243,
+      "longitude": 77.828,
+      "date_time": "2025-08-30 22:00:00",
+      "severity_score": 6.0
+    },
+    {
+      "incident_id": "CR-AGRA-2025-10",
+      "city": "Agra",
+      "ward": "Tajganj Outer",
+      "crime_type": "Unauthorized Street Vending",
+      "latitude": 27.173,
+      "longitude": 78.04,
+      "date_time": "2025-11-05 11:00:00",
+      "severity_score": 2.0
+    }
+  ]
+}

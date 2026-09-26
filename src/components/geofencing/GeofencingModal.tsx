@@ -43,7 +43,7 @@ export function GeofencingModal({ isOpen, onClose }: GeofencingModalProps) {
             <div className="flex items-center gap-3">
               <Shield size={28} />
               <div>
-                <h2 className="text-2xl font-bold">SafePath Geofencing</h2>
+                <h2 className="text-2xl font-bold">WayORA Geofencing</h2>
                 <p className="text-green-100">Real-time safety zone monitoring</p>
               </div>
             </div>

@@ -1,7 +1,9 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Search, Bell, MessageCircle, User, Settings, LifeBuoy, LogOut, Menu } from 'lucide-react'
+import { Search, Bell, MessageCircle, User, Settings, LifeBuoy, LogOut, Menu, Shield, Car, Compass, Navigation, Radio } from 'lucide-react'
+
+import { BrandLogo } from '@/components/common/BrandLogo'
 
 interface HeaderProps {
   userName?: string
@@ -59,33 +61,38 @@ export function Header({ userName = "Aditya Kaushik", userImage }: HeaderProps) 
     }
   }
 
+  const formatTime = (time: string) => time
+
   return (
     <>
       <header className="header">
         <div className="header-left">
-          <div className="logo">
-            <span className="logo-icon">🛡️</span>
-            <div className="logo-text">
-              <h1>SafePath</h1>
-              <p>Smart Tourist Safety System</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="header-center">
           <form onSubmit={handleSearch} className="search-form">
             <div className="search-container">
-              <Search className="search-icon" size={20} />
+              <Search className="search-icon" size={18} />
               <input
                 type="text"
-                placeholder="Find monuments, locations, safety info..."
+                placeholder="Find monuments, safety info..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="search-input"
               />
-              <kbd className="search-shortcut">F</kbd>
             </div>
           </form>
+        </div>
+
+        {/* Horizontal Center Large Expanded Logo */}
+        <div 
+          className="header-center-logo cursor-pointer" 
+          onClick={() => window.location.href = '/'}
+        >
+          <img
+            src="/logo.png"
+            alt="WayORA Logo"
+            width={600}
+            height={160}
+            className="w-full h-full object-contain max-h-16 md:max-h-20 select-none bg-transparent transition-transform hover:scale-105"
+          />
         </div>
 
         <div className="header-right">
@@ -99,79 +106,98 @@ export function Header({ userName = "Aditya Kaushik", userImage }: HeaderProps) 
           <div className="notification-container" ref={notificationRef}>
             <button
               className="notification-btn"
-              onClick={() => setShowNotifications(!showNotifications)}
+              onClick={() => setIsNotificationOpen(!isNotificationOpen)}
             >
               <Bell size={20} />
-              {notifications.length > 0 && (
-                <span className="notification-badge">{notifications.length}</span>
+              {unreadCount > 0 && (
+                <span className="notification-badge">{unreadCount}</span>
               )}
             </button>
 
-            {showNotifications && (
+            {/* Notification Dropdown */}
+            {isNotificationOpen && (
               <div className="notification-dropdown">
                 <div className="notification-header">
                   <h3>Notifications</h3>
-                  <span className="notification-count">{notifications.length}</span>
+                  {unreadCount > 0 && (
+                    <button 
+                      className="mark-all-read-btn"
+                      onClick={markAllNotificationsAsRead}
+                    >
+                      Mark all read
+                    </button>
+                  )}
                 </div>
+
                 <div className="notification-list">
-                  {notifications.length > 0 ? (
-                    notifications.map((notification) => (
+                  {notifications.length === 0 ? (
+                    <div className="empty-notifications">
+                      <p>No notifications</p>
+                    </div>
+                  ) : (
+                    notifications.map(notification => (
                       <div
                         key={notification.id}
-                        className="notification-item"
-                        onClick={() => handleNotificationClick(notification.id)}
+                        className={`notification-item ${notification.read ? 'read' : 'unread'}`}
+                        onClick={() => markNotificationAsRead(notification.id)}
                       >
-                        <div className="notification-icon">
+                        <span className="notification-type-icon">
                           {getNotificationIcon(notification.type)}
-                        </div>
+                        </span>
                         <div className="notification-content">
                           <p>{notification.message}</p>
-                          <span className="notification-time">{notification.time}</span>
+                          <span className="notification-time">
+                            {formatTime(notification.time)}
+                          </span>
                         </div>
+                        <button
+                          className="delete-notification-btn"
+                          onClick={(e) => deleteNotification(notification.id, e)}
+                        >
+                          ×
+                        </button>
                       </div>
                     ))
-                  ) : (
-                    <div className="no-notifications">
-                      <p>No new notifications</p>
-                    </div>
                   )}
                 </div>
               </div>
             )}
           </div>
 
-          {/* Profile Menu */}
+          {/* Language Selector */}
+          <div className="language-selector-wrapper">
+            <LanguageSelector />
+          </div>
+
+          {/* Profile Dropdown */}
           <div className="profile-container" ref={profileRef}>
             <button
               className="profile-btn"
-              onClick={() => setShowProfileMenu(!showProfileMenu)}
+              onClick={() => setIsProfileOpen(!isProfileOpen)}
             >
-              <div className="profile-avatar">
-                {userImage ? (
-                  <img src={userImage} alt={userName} />
-                ) : (
-                  <div className="avatar-placeholder">
-                    {userName.split(' ').map(n => n[0]).join('')}
-                  </div>
-                )}
-              </div>
-              <div className="profile-info">
-                <span className="profile-name">{userName}</span>
-                <div className="profile-status"></div>
-              </div>
+              <img
+                src={userProfilePic}
+                alt="Profile"
+                className="profile-pic"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/api/placeholder/40/40'
+                }}
+              />
+              <div className="profile-indicator"></div>
             </button>
 
-            {showProfileMenu && (
+            {/* Profile Dropdown Menu */}
+            {isProfileOpen && (
               <div className="profile-dropdown">
                 <div className="profile-dropdown-header">
                   <div className="profile-avatar-large">
-                    {userImage ? (
-                      <img src={userImage} alt={userName} />
-                    ) : (
-                      <div className="avatar-placeholder-large">
-                        {userName.split(' ').map(n => n[0]).join('')}
-                      </div>
-                    )}
+                    <img
+                      src={userProfilePic}
+                      alt="Profile"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = '/api/placeholder/40/40'
+                      }}
+                    />
                   </div>
                   <div className="profile-dropdown-info">
                     <h4>{userName}</h4>
@@ -180,22 +206,46 @@ export function Header({ userName = "Aditya Kaushik", userImage }: HeaderProps) 
                 </div>
 
                 <div className="profile-menu-items">
-                  <button className="profile-menu-item">
+                  <button className="profile-menu-item" onClick={() => window.location.href = '/safepath-x'}>
+                    <Shield size={18} className="text-cyan-400" />
+                    <span>WayORA Next-Gen Portal</span>
+                  </button>
+                  <button className="profile-menu-item" onClick={() => window.location.href = '/safepath-x/command-center'}>
+                    <Settings size={18} className="text-blue-400" />
+                    <span>WayORA National Command Deck</span>
+                  </button>
+                  <button className="profile-menu-item" onClick={() => window.location.href = '/ride'}>
+                    <Car size={18} className="text-cyan-400" />
+                    <span>Ride Shield & FairFare</span>
+                  </button>
+                  <button className="profile-menu-item" onClick={() => window.location.href = '/explore'}>
+                    <Compass size={18} className="text-emerald-400" />
+                    <span>Safe Radar Discovery</span>
+                  </button>
+                  <button className="profile-menu-item" onClick={() => window.location.href = '/dashboard'}>
+                    <Shield size={18} />
+                    <span>Tourist Safety Portal</span>
+                  </button>
+                  <button className="profile-menu-item" onClick={() => window.location.href = '/dashboard/authority'}>
+                    <Settings size={18} />
+                    <span>Authority Command Center</span>
+                  </button>
+                  <button className="profile-menu-item" onClick={() => window.location.href = '/edit-profile'}>
                     <User size={18} />
                     <span>Edit Profile</span>
                   </button>
-                  <button className="profile-menu-item">
-                    <Settings size={18} />
-                    <span>Dashboard</span>
-                  </button>
-                  <button className="profile-menu-item">
+                  <button className="profile-menu-item" onClick={() => window.location.href = '/customer-care'}>
                     <LifeBuoy size={18} />
                     <span>Customer Care</span>
                   </button>
                 </div>
 
                 <div className="profile-menu-footer">
-                  <button className="profile-menu-item logout">
+                  <button className="profile-menu-item logout" onClick={() => {
+                    localStorage.removeItem('tourist_digital_id');
+                    localStorage.removeItem('wayora_token');
+                    window.location.href = '/';
+                  }}>
                     <LogOut size={18} />
                     <span>Logout</span>
                   </button>
@@ -212,52 +262,39 @@ export function Header({ userName = "Aditya Kaushik", userImage }: HeaderProps) 
           top: 0;
           left: 0;
           right: 0;
-          height: 80px;
-          background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          height: 88px;
+          background: rgba(255, 255, 255, 0.96);
+          border-bottom: 1px solid #e2e8f0;
           display: flex;
           align-items: center;
           justify-content: space-between;
           padding: 0 24px;
           z-index: 50;
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(12px);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
         }
 
         .header-left {
           display: flex;
           align-items: center;
+          max-width: 300px;
+          width: 100%;
+          z-index: 10;
         }
 
-        .logo {
+        .header-center-logo {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
           display: flex;
           align-items: center;
-          gap: 12px;
-        }
-
-        .logo-icon {
-          font-size: 32px;
-          filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
-        }
-
-        .logo-text h1 {
-          color: white;
-          font-size: 24px;
-          font-weight: 700;
-          margin: 0;
-          line-height: 1.2;
-        }
-
-        .logo-text p {
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 12px;
-          margin: 0;
-          line-height: 1.2;
-        }
-
-        .header-center {
-          flex: 1;
-          max-width: 600px;
-          margin: 0 40px;
+          justify-content: center;
+          width: 450px;
+          max-width: calc(100% - 640px);
+          height: 100%;
+          padding: 6px 0;
+          z-index: 5;
         }
 
         .search-form {
@@ -271,74 +308,60 @@ export function Header({ userName = "Aditya Kaushik", userImage }: HeaderProps) 
 
         .search-icon {
           position: absolute;
-          left: 16px;
+          left: 14px;
           top: 50%;
           transform: translateY(-50%);
-          color: #6b7280;
+          color: #94a3b8;
           pointer-events: none;
         }
 
         .search-input {
           width: 100%;
-          height: 44px;
-          padding: 0 80px 0 48px;
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 12px;
-          color: white;
-          font-size: 16px;
+          height: 40px;
+          padding: 0 16px 0 40px;
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 10px;
+          color: #1e293b;
+          font-size: 14px;
           transition: all 0.2s ease;
-          backdrop-filter: blur(10px);
         }
 
         .search-input:focus {
           outline: none;
-          background: rgba(255, 255, 255, 0.15);
-          border-color: #3b82f6;
-          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+          background: #ffffff;
+          border-color: #6366f1;
+          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
         }
 
         .search-input::placeholder {
-          color: rgba(255, 255, 255, 0.6);
-        }
-
-        .search-shortcut {
-          position: absolute;
-          right: 16px;
-          top: 50%;
-          transform: translateY(-50%);
-          background: rgba(255, 255, 255, 0.2);
-          color: rgba(255, 255, 255, 0.8);
-          padding: 4px 8px;
-          border-radius: 6px;
-          font-size: 12px;
-          font-weight: 600;
+          color: #94a3b8;
         }
 
         .header-right {
           display: flex;
           align-items: center;
-          gap: 16px;
+          gap: 12px;
         }
 
         .feedback-btn {
           display: flex;
           align-items: center;
-          gap: 8px;
-          background: #dc2626;
-          color: white;
-          border: none;
-          padding: 8px 16px;
+          gap: 6px;
+          background: #f1f5f9;
+          color: #334155;
+          border: 1px solid #e2e8f0;
+          padding: 8px 14px;
           border-radius: 8px;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 600;
           cursor: pointer;
           transition: all 0.2s ease;
         }
 
         .feedback-btn:hover {
-          background: #b91c1c;
-          transform: translateY(-1px);
+          background: #e2e8f0;
+          color: #0f172a;
         }
 
         .notification-container {
@@ -347,17 +370,41 @@ export function Header({ userName = "Aditya Kaushik", userImage }: HeaderProps) 
 
         .notification-btn {
           position: relative;
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
           border-radius: 8px;
           padding: 8px;
-          color: white;
+          color: #475569;
           cursor: pointer;
           transition: all 0.2s ease;
         }
 
         .notification-btn:hover {
-          background: rgba(255, 255, 255, 0.15);
+          background: #f1f5f9;
+          color: #0f172a;
+        }
+
+        .profile-btn {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 10px;
+          padding: 6px 10px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .profile-btn:hover {
+          background: #f1f5f9;
+        }
+
+        .profile-name {
+          color: #1e293b;
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 1.2;
         }
 
         .notification-badge {

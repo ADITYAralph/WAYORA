@@ -251,7 +251,7 @@ export function LiveLocationMap({ monumentLocation, monumentName, showRoute = fa
         `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`,
         {
           headers: {
-            'User-Agent': 'SafePath Tourist Safety App'
+            'User-Agent': 'WayORA Tourist Safety App'
           }
         }
       )

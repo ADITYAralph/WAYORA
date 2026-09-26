@@ -154,3 +154,12 @@ body {
     background: #1f2937 !important;
   }
 }
+
+/* ========================================================
+   Clean Daylight Rendering for OpenStreetMap Raster Tiles
+   (Bright, Crisp, Natural Editorial Aesthetic)
+   ======================================================== */
+.leaflet-tile-pane {
+  filter: none !important;
+}
+

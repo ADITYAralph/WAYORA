@@ -21,6 +21,218 @@ export interface TouristZone {
 }
 
 export const REAL_INDIA_TOURIST_ZONES: TouristZone[] = [
+  // SUA: SHARDA UNIVERSITY AGRA (ANAND ENGINEERING COLLEGE CAMPUS)
+  {
+    id: 'sua_academic_core',
+    name: 'SUA: Sharda University Agra (Anand Engineering College Campus)',
+    monumentName: 'SUA: Sharda University Agra (AEC Campus)',
+    location: { lat: 27.2481, lng: 77.8345 },
+    city: 'Agra',
+    state: 'Uttar Pradesh',
+    type: 'safe',
+    radius: 350,
+    safetyLevel: 9,
+    description: 'Premier university and engineering campus combining SUA (Sharda University Agra) and Anand Engineering College across 60+ acres, with 24/7 security control, CCTV perimeter, lecture halls, and medical clinics.',
+    emergencyContacts: {
+      police: '112',
+      medical: '108',
+      tourist_helpline: '1363'
+    },
+    facilities: ['24/7 Security Control Room', 'Full CCTV Coverage', 'First Aid & Medical Clinic', 'Central RO Water', 'Wi-Fi & Fire Safety'],
+    riskFactors: ['Heavy student movement during class intervals', 'Restricted high-voltage panel areas'],
+    lastUpdated: '2026-02-21',
+    isActive: true
+  },
+  {
+    id: 'sharda_aec_main_gate_highway',
+    name: 'AEC Main Gate & NH-19 Highway Service Corridor',
+    monumentName: 'AEC Main Gate & Bus Terminal',
+    location: { lat: 27.2512, lng: 77.8335 },
+    city: 'Agra',
+    state: 'Uttar Pradesh',
+    type: 'caution',
+    radius: 200,
+    safetyLevel: 6,
+    description: 'Front gate vehicular checkpost, visitor parking, student bus boarding bays, and NH-19 highway access service road.',
+    emergencyContacts: {
+      police: '112',
+      medical: '108',
+      tourist_helpline: '1363'
+    },
+    facilities: ['Armed Security Booth', 'Boom Barriers & ANPR Cameras', 'Visitor Kiosk', 'Shaded Bus Bay'],
+    riskFactors: ['Fast-moving truck traffic on NH-19 highway', 'Blind turning spots', 'Unauthorized auto-rickshaws on shoulder'],
+    lastUpdated: '2026-02-21',
+    isActive: true
+  },
+  {
+    id: 'sharda_aec_girls_hostel',
+    name: 'Anand Girls Hostel & Faculty Residential Enclave',
+    monumentName: 'AEC Girls Hostel & Faculty Enclave',
+    location: { lat: 27.2470, lng: 77.8375 },
+    city: 'Agra',
+    state: 'Uttar Pradesh',
+    type: 'safe',
+    radius: 200,
+    safetyLevel: 10,
+    description: 'Tier-1 protected residential enclave with high boundary wall, dedicated female security personnel, biometric entry turnstiles, and direct SOS alarm hotline.',
+    emergencyContacts: {
+      police: '112',
+      medical: '108',
+      tourist_helpline: '1363'
+    },
+    facilities: ['24/7 Female Guards & Warden Office', 'Biometric Access', 'Indoor Medical Dispensary', 'Gym & Dining'],
+    riskFactors: ['Restricted entry for visitors', 'Curfew check-in after 7:30 PM'],
+    lastUpdated: '2026-02-21',
+    isActive: true
+  },
+  {
+    id: 'sharda_aec_boys_hostel',
+    name: 'Anand Boys Hostels & Central Dining Complex',
+    monumentName: 'AEC Boys Hostels (A, B, C)',
+    location: { lat: 27.2450, lng: 77.8355 },
+    city: 'Agra',
+    state: 'Uttar Pradesh',
+    type: 'safe',
+    radius: 280,
+    safetyLevel: 8,
+    description: 'Multi-block residential zone for students with security checkpoints, night warden patrols, student dining halls, and sports recreation lounges.',
+    emergencyContacts: {
+      police: '112',
+      medical: '108',
+      tourist_helpline: '1363'
+    },
+    facilities: ['24/7 Security Posts', 'Student Mess & Night Canteen', 'CCTV on Stairwells', 'Emergency Vehicle on Standby'],
+    riskFactors: ['Dimly lit pathways near sports ground after 10 PM', 'Movement restricted outside campus wall at night'],
+    lastUpdated: '2026-02-21',
+    isActive: true
+  },
+  {
+    id: 'sharda_aec_sports_complex',
+    name: 'Anand Sports Stadium & Athletic Grounds',
+    monumentName: 'AEC Sports Stadium & Cricket Ground',
+    location: { lat: 27.2440, lng: 77.8335 },
+    city: 'Agra',
+    state: 'Uttar Pradesh',
+    type: 'safe',
+    radius: 260,
+    safetyLevel: 8,
+    description: 'Athletic facility with cricket ground, football field, basketball and tennis courts, surrounded by perimeter security fencing.',
+    emergencyContacts: {
+      police: '112',
+      medical: '108',
+      tourist_helpline: '1363'
+    },
+    facilities: ['Floodlit Courts', 'Drinking Water Dispensers', 'Sports Injury First Aid', 'Perimeter Patrols'],
+    riskFactors: ['Summer midday heat exposure', 'Isolated outer boundary after 9:00 PM'],
+    lastUpdated: '2026-02-21',
+    isActive: true
+  },
+  {
+    id: 'sharda_aec_workshops_innovation',
+    name: 'AEC Mechanical Workshops & Technology Labs',
+    monumentName: 'AEC Mechanical Workshops & Labs',
+    location: { lat: 27.2490, lng: 77.8320 },
+    city: 'Agra',
+    state: 'Uttar Pradesh',
+    type: 'safe',
+    radius: 180,
+    safetyLevel: 8,
+    description: 'Engineering workshops, manufacturing labs, robotics centers, and high-voltage testing hangars with industrial safety protocols.',
+    emergencyContacts: {
+      police: '112',
+      medical: '108',
+      tourist_helpline: '1363'
+    },
+    facilities: ['Industrial Fire Hydrant System', 'Eye-Wash Stations', 'First Aid Response', 'Instructor Supervision'],
+    riskFactors: ['Operating heavy CNC machinery & welding tools', 'High-voltage testing zones'],
+    lastUpdated: '2026-02-21',
+    isActive: true
+  },
+  {
+    id: 'keetham_station_approach',
+    name: 'Keetham Railway Station & Rural Approach Road',
+    monumentName: 'Keetham Railway Station Approach',
+    location: { lat: 27.2430, lng: 77.8280 },
+    city: 'Agra',
+    state: 'Uttar Pradesh',
+    type: 'caution',
+    radius: 350,
+    safetyLevel: 5,
+    description: 'Local railway station and connecting rural link road providing passenger train access to Agra and Mathura. Sparsely lit at night.',
+    emergencyContacts: {
+      police: '112',
+      medical: '108',
+      tourist_helpline: '1363'
+    },
+    facilities: ['Railway Station Ticket Counter', 'Local Tea Stall'],
+    riskFactors: ['Semi-manned railway crossing', 'Sparse street lighting after sunset', 'Isolated road stretch'],
+    lastUpdated: '2026-02-21',
+    isActive: true
+  },
+  {
+    id: 'keetham_lake_danger',
+    name: 'Sur Sarovar (Keetham Lake) Forest Perimeter',
+    monumentName: 'Sur Sarovar Bird Sanctuary & Keetham Forest',
+    location: { lat: 27.2510, lng: 77.8420 },
+    city: 'Agra',
+    state: 'Uttar Pradesh',
+    type: 'danger',
+    radius: 650,
+    safetyLevel: 2,
+    description: 'Protected national wetland ecosystem and dense reserve forest. High biodiversity with wild animal presence. Strictly restricted after dark.',
+    emergencyContacts: {
+      police: '112',
+      medical: '108',
+      tourist_helpline: '1363'
+    },
+    facilities: ['Forest Ranger Checkpoint (Daytime Only)', 'Bear Rescue Facility Entry Point Nearby'],
+    riskFactors: ['Zero lighting and poor cellular connectivity in deep forest', 'Wildlife encounters (snakes, jackals)', 'Marshy terrain with drowning risk', 'Restricted entry after 5:30 PM'],
+    lastUpdated: '2026-02-21',
+    isActive: true
+  },
+  {
+    id: 'runakta_junction_caution',
+    name: 'Runakta Highway Junction & Market Area',
+    monumentName: 'Runakta Transit Hub (Near Sharda University)',
+    location: { lat: 27.2380, lng: 77.8820 },
+    city: 'Agra',
+    state: 'Uttar Pradesh',
+    type: 'caution',
+    radius: 400,
+    safetyLevel: 5,
+    description: 'Busy transit junction with local markets, highway dhabas, and auto stands. High vehicular traffic and pickpocket vulnerability during peak hours.',
+    emergencyContacts: {
+      police: '112',
+      medical: '108',
+      tourist_helpline: '1363'
+    },
+    facilities: ['Local Police Patrol Post', 'Pharmacy & Clinic', 'Bus & Auto Transit', '24/7 Highway Dhabas'],
+    riskFactors: ['Fast moving high-speed trucks and highway traffic', 'Pickpocketing in crowded bazaars', 'Poor lighting on service lanes'],
+    lastUpdated: '2026-02-21',
+    isActive: true
+  },
+  {
+    id: 'sikandra_heritage_safe',
+    name: 'Sikandra (Akbar\'s Tomb) Heritage Area',
+    monumentName: 'Tomb of Akbar the Great (Sikandra)',
+    location: { lat: 27.2206, lng: 77.9505 },
+    city: 'Agra',
+    state: 'Uttar Pradesh',
+    type: 'safe',
+    radius: 500,
+    safetyLevel: 8,
+    description: 'Prominent UNESCO heritage candidate complex with ASI security staff, tourist police deployment, ticketed perimeter, and paved tourist pathways.',
+    emergencyContacts: {
+      police: '112',
+      medical: '108',
+      tourist_helpline: '1363'
+    },
+    facilities: ['ASI Security Guard Desk', 'Drinking Water Dispensers', 'Clean Restrooms', 'Parking Area with CCTV'],
+    riskFactors: ['High summer heat in open courtyards', 'Street vendors outside entry gateway'],
+    lastUpdated: '2026-02-20',
+    isActive: true
+  },
+
   // TAJ MAHAL, AGRA
   {
     id: 'taj_mahal_main',

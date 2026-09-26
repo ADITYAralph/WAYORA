@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { MapPin, Minimize2, Maximize2, Navigation, AlertCircle, Target, Crosshair } from 'lucide-react'
+import { MapPin, Minimize2, Maximize2, Navigation, AlertCircle, Target, Crosshair, Shield } from 'lucide-react'
+import { REAL_INDIA_TOURIST_ZONES } from '@/data/realIndiaZones'
 
 interface LiveMapProps {
   apiKey?: string
@@ -57,11 +58,14 @@ export function LiveMap({ apiKey }: LiveMapProps) {
       
       mapInstanceRef.current = L.map(mapRef.current).setView(defaultLocation, 13)
 
-      // Add OpenStreetMap tiles with better attribution
+      // Add OpenStreetMap tiles (styled with dark mode CSS filter)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19
       }).addTo(mapInstanceRef.current)
+
+      // Render safety zones on map
+      renderSafetyZones(mapInstanceRef.current, L)
 
       // Start automatic location tracking
       startLocationTracking()
@@ -74,6 +78,26 @@ export function LiveMap({ apiKey }: LiveMapProps) {
       }
     }
   }, [isLoaded])
+
+  const renderSafetyZones = (map: any, L: any) => {
+    REAL_INDIA_TOURIST_ZONES.forEach((zone) => {
+      const color = zone.type === 'safe' ? '#10B981' : zone.type === 'caution' ? '#F59E0B' : '#EF4444'
+      
+      L.circle([zone.location.lat, zone.location.lng], {
+        radius: zone.radius,
+        color,
+        fillColor: color,
+        fillOpacity: 0.2,
+        weight: 2
+      }).addTo(map).bindPopup(`
+        <div style="font-family: sans-serif; font-size: 12px;">
+          <strong>${zone.name}</strong><br>
+          <span>${zone.type === 'safe' ? '🟢 Safe Zone' : zone.type === 'caution' ? '🟡 Caution Zone' : '🔴 Danger Zone'} (${zone.safetyLevel}/10)</span><br>
+          <small>${zone.city}, ${zone.state}</small>
+        </div>
+      `)
+    })
+  }
 
   const startLocationTracking = () => {
     if (!navigator.geolocation) {

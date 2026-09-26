@@ -245,7 +245,7 @@ const AllIndiaGeofencingModal = ({ isOpen, onClose }) => {
     const mapInstance = window.L.map(mapRef.current).setView([cityCenter.lat, cityCenter.lng], cityCenter.zoom);
 
     window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 19
     }).addTo(mapInstance);
 
@@ -572,7 +572,7 @@ const AllIndiaGeofencingModal = ({ isOpen, onClose }) => {
               fontSize: '24px', 
               fontWeight: 'bold'
             }}>
-              🇮🇳 SafePath All India Monuments
+              🇮🇳 WayORA All India Monuments
             </h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>

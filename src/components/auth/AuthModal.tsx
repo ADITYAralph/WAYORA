@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
 import { Shield, Mail, Lock, User, Eye, EyeOff } from 'lucide-react'
+import { BrandLogo } from '@/components/common/BrandLogo'
 
 // Famous Indian monuments for slideshow (keeping your URLs)
 const indianMonuments = [
@@ -170,14 +171,14 @@ export function AuthModal() {
         <div className="absolute inset-0 rounded-2xl glass-shimmer pointer-events-none"></div>
         
         {/* Header */}
-        <div className="text-center mb-8 relative z-10">
-          <div className="w-16 h-16 glass-icon-bg rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <Shield className="text-white drop-shadow-lg" size={32} />
+        <div className="text-center mb-8 relative z-10 flex flex-col items-center">
+          <div className="mb-4">
+            <BrandLogo size="lg" showText={false} />
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2 drop-shadow-2xl">SafePath</h1>
+          <h1 className="text-3xl font-bold text-white mb-2 drop-shadow-2xl">WayORA</h1>
           <p className="text-white/90 drop-shadow-lg">Smart Tourist Safety System</p>
           <p className="text-sm text-white/80 mt-2 drop-shadow">
-            {isSignIn ? 'Welcome back!' : 'Join SafePath today'}
+            {isSignIn ? 'Welcome back!' : 'Join WayORA today'}
           </p>
         </div>
 
@@ -360,7 +361,7 @@ export function AuthModal() {
             </button>
           </p>
           <p className="text-xs text-white/60 mt-4 drop-shadow">
-            Developed by <span className="font-medium text-white/80">CodeBlooded</span>
+            Developed by <span className="font-medium text-white/80">RUDRACORE</span>
           </p>
         </div>
       </div>

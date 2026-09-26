@@ -122,9 +122,9 @@ const GeofencingModal = ({ isOpen, onClose }) => {
     // Initialize map centered on Delhi
     const mapInstance = window.L.map(mapRef.current).setView([28.6139, 77.2090], 11);
 
-    // Add OpenStreetMap tiles (completely free)
+    // Add OpenStreetMap raster tiles (styled with dark mode CSS filter)
     window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 19
     }).addTo(mapInstance);
 
@@ -415,7 +415,7 @@ const GeofencingModal = ({ isOpen, onClose }) => {
               fontSize: '24px', 
               fontWeight: 'bold'
             }}>
-              🗺️ SafePath Live Geofencing
+              🗺️ WayORA Live Geofencing
             </h2>
             <p style={{ margin: 0, fontSize: '16px', opacity: 0.9 }}>
               Real-time Delhi map with live GPS tracking • OpenStreetMap

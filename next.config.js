@@ -9,7 +9,6 @@ const nextConfig = {
   experimental: {
     esmExternals: false,
   },
-  swcMinify: false,
   webpack: (config, { isServer, webpack }) => {
     if (!isServer) {
       config.resolve.fallback = {

@@ -199,7 +199,7 @@ const CustomerCare = () => {
               fontSize: '16px',
               fontWeight: 'bold'
             }}>
-              📞 Call Emergency: 911
+              📞 Call Emergency: 112
             </button>
             <button style={{
               background: 'rgba(255,255,255,0.2)',
@@ -254,7 +254,7 @@ const CustomerCare = () => {
               fontWeight: 'bold',
               marginBottom: '15px'
             }}>
-              +91-1363-000-0000
+              1800-11-1363
             </div>
             <button style={{
               background: 'white',
@@ -469,10 +469,10 @@ const CustomerCare = () => {
                   borderRadius: '10px',
                   border: 'none',
                   fontSize: '16px',
-                  background: 'rgba(255,255,255,0.9)'
+                  background: 'rgba(213, 8, 138, 0.9)'
                 }}
               >
-                <option value="general">General Inquiry</option>
+                <option value="general ">General Inquiry</option>
                 <option value="technical">Technical Issue</option>
                 <option value="safety">Safety Concern</option>
                 <option value="account">Account Problem</option>
@@ -487,7 +487,7 @@ const CustomerCare = () => {
                   borderRadius: '10px',
                   border: 'none',
                   fontSize: '16px',
-                  background: 'rgba(255,255,255,0.9)'
+                  background: 'rgba(213, 8, 138, 0.9)'
                 }}
               >
                 <option value="low">Low Priority</option>
@@ -510,7 +510,7 @@ const CustomerCare = () => {
                 border: 'none',
                 fontSize: '16px',
                 marginBottom: '20px',
-                background: 'rgba(255,255,255,0.9)',
+                background: 'rgba(213, 8, 138, 0.9)',
                 boxSizing: 'border-box'
               }}
             />
@@ -529,7 +529,7 @@ const CustomerCare = () => {
                 fontSize: '16px',
                 marginBottom: '20px',
                 resize: 'vertical',
-                background: 'rgba(255,255,255,0.9)',
+                background: 'rgba(213, 8, 138, 0.9)',
                 boxSizing: 'border-box'
               }}
             />

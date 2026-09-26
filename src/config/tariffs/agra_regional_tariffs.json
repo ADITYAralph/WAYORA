@@ -1,0 +1,89 @@
+{
+  "regionCode": "UP-AGRA",
+  "regionName": "Agra Metropolitan & Taj Protected Tourism Zone",
+  "regulatoryAuthority": "Regional Transport Authority (RTA), Agra, Government of Uttar Pradesh",
+  "gazetteNotificationCode": "UP-RTO-AGRA-NOTIF-2025/T-401",
+  "lastRevisionDate": "2025-10-01",
+  "currency": "INR",
+  "currencySymbol": "₹",
+  "nightTariffHours": {
+    "start": "23:00",
+    "end": "05:00",
+    "multiplier": 1.25
+  },
+  "vehicleCategories": {
+    "auto_rickshaw": {
+      "id": "auto_rickshaw",
+      "name": "Auto Rickshaw (3-Wheeler CNG/Petrol)",
+      "nameHindi": "Auto Rickshaw (CNG / Petrol)",
+      "baseTariff": 30.0,
+      "baseDistanceKm": 1.5,
+      "perKmRate": 12.0,
+      "waitingChargePerMin": 1.0,
+      "luggageChargePerPiece": 10.0,
+      "icon": "🛺"
+    },
+    "taxi_non_ac": {
+      "id": "taxi_non_ac",
+      "name": "Taxi Non-AC (Sedan / Hatchback)",
+      "nameHindi": "Taxi Non-AC (Sedan / Hatchback)",
+      "baseTariff": 50.0,
+      "baseDistanceKm": 1.5,
+      "perKmRate": 16.0,
+      "waitingChargePerMin": 1.5,
+      "luggageChargePerPiece": 15.0,
+      "icon": "🚕"
+    },
+    "taxi_ac": {
+      "id": "taxi_ac",
+      "name": "Taxi AC (Air-Conditioned Sedan / Prime)",
+      "nameHindi": "Taxi AC (Air-Conditioned Sedan / Prime)",
+      "baseTariff": 75.0,
+      "baseDistanceKm": 1.5,
+      "perKmRate": 20.0,
+      "waitingChargePerMin": 2.0,
+      "luggageChargePerPiece": 20.0,
+      "icon": "🚘"
+    },
+    "e_rickshaw": {
+      "id": "e_rickshaw",
+      "name": "E-Rickshaw (Short-Hop Local Transit)",
+      "nameHindi": "E-Rickshaw (Short-Hop Local Transit)",
+      "baseTariff": 15.0,
+      "baseDistanceKm": 1.5,
+      "perKmRate": 8.0,
+      "waitingChargePerMin": 0.5,
+      "luggageChargePerPiece": 5.0,
+      "icon": "⚡"
+    }
+  },
+  "popularFixedRoutes": [
+    {
+      "origin": "Agra Cantt Railway Station",
+      "originHindi": "Agra Cantt Railway Station",
+      "destination": "Taj Mahal West Gate",
+      "destinationHindi": "Taj Mahal West Gate",
+      "distanceKm": 6.2,
+      "standardAutoFare": 90,
+      "standardTaxiFare": 150
+    },
+    {
+      "origin": "SUA: Sharda University Agra (Anand Campus)",
+      "originHindi": "Sharda University Agra (Anand Campus)",
+      "destination": "Agra Cantt Railway Station",
+      "destinationHindi": "Agra Cantt Railway Station",
+      "distanceKm": 21.5,
+      "standardAutoFare": 270,
+      "standardTaxiFare": 450
+    },
+    {
+      "origin": "SUA: Sharda University Agra (Anand Campus)",
+      "originHindi": "Sharda University Agra (Anand Campus)",
+      "destination": "Taj Mahal Protected Heritage Zone",
+      "destinationHindi": "Taj Mahal Protected Heritage Zone",
+      "distanceKm": 24.8,
+      "standardAutoFare": 310,
+      "standardTaxiFare": 520
+    }
+  ]
+}

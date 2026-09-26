@@ -11,6 +11,7 @@ import { Shield, MapPin, Bell, User, LogOut, AlertTriangle } from 'lucide-react'
 
 // ADD: Import the new geofencing modal
 import AllIndiaGeofencingModal from '@/components/AllIndiaGeofencingModal'
+import { BrandLogo } from '@/components/common/BrandLogo'
 
 export default function Dashboard() {
   const { t } = useTranslation()
@@ -108,36 +109,42 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
       {/* Header */}
-      <header className="bg-white shadow-lg">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                <Shield size={20} className="text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-800">SafePath</h1>
-                <p className="text-sm text-gray-600">Smart Tourist Safety System</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-4">
+      <header className="bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm sticky top-0 z-40 h-20 md:h-24">
+        <div className="max-w-6xl mx-auto px-6 h-full">
+          <div className="relative flex items-center justify-between h-full">
+            <div className="flex items-center gap-3 z-10">
               {/* ADD: All India Mode Toggle */}
               <button
                 onClick={() => setUseAllIndiaMode(!useAllIndiaMode)}
-                className={`px-3 py-2 rounded-full text-xs font-bold transition ${
+                className={`px-3.5 py-2 rounded-full text-xs font-bold transition shadow-sm ${
                   useAllIndiaMode 
                     ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white' 
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
                 }`}
               >
                 {useAllIndiaMode ? '🇮🇳 All India' : '📍 Local'} Mode
               </button>
+            </div>
 
+            {/* Centered Expanded Logo */}
+            <div 
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer flex items-center justify-center w-72 sm:w-96 md:w-[450px] h-full py-1.5 z-0"
+              onClick={() => router.push('/')}
+            >
+              <img
+                src="/logo.png"
+                alt="WayORA Logo"
+                width={600}
+                height={160}
+                className="w-full h-full object-contain max-h-16 md:max-h-20 select-none bg-transparent transition-transform duration-200 hover:scale-[1.02]"
+              />
+            </div>
+            
+            <div className="flex items-center gap-4 z-10">
               <LanguageSelector />
               <button
                 onClick={handleLogout}
-                className="flex items-center gap-2 text-red-600 hover:text-red-700 transition"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-red-600 hover:bg-red-50 hover:text-red-700 transition text-sm font-semibold border border-transparent hover:border-red-200"
               >
                 <LogOut size={16} />
                 <span className="hidden sm:inline">Logout</span>

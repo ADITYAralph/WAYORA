@@ -99,7 +99,7 @@ export function LoadingScreen({ onAnimationComplete }: LoadingScreenProps) {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center"
           >
-            {/* SafePath Title */}
+            {/* WayORA Title */}
             <motion.h1
               animate={{ 
                 textShadow: [
@@ -118,10 +118,10 @@ export function LoadingScreen({ onAnimationComplete }: LoadingScreenProps) {
                 backgroundClip: 'text',
               }}
             >
-              SafePath
+              WayORA
             </motion.h1>
 
-            {/* By CodeBlooded */}
+            {/* By RUDRACORE */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ export function LoadingScreen({ onAnimationComplete }: LoadingScreenProps) {
               className="text-2xl md:text-3xl text-gray-300 font-light tracking-wider select-none"
               style={{ fontFamily: '"Inter", sans-serif' }}
             >
-              by <span className="font-medium text-blue-400">CodeBlooded</span>
+              by <span className="font-medium text-blue-400">RUDRACORE</span>
             </motion.p>
 
             {/* Loading Animation */}
@@ -174,7 +174,7 @@ export function LoadingScreen({ onAnimationComplete }: LoadingScreenProps) {
               backgroundClip: 'text',
             }}
           >
-            SafePath
+            WayORA
           </motion.div>
         )}
       </div>

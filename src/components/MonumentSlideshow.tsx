@@ -66,15 +66,15 @@ export function MonumentSlideshow() {
               className="w-full h-full bg-cover bg-center bg-no-repeat transform scale-110"
               style={{
                 backgroundImage: `url(${image.url})`,
-                filter: 'brightness(0.4) contrast(1.1) saturate(1.2)'
+                filter: 'brightness(0.85) contrast(1.05) saturate(1.1)'
               }}
             />
             
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-gray-900/80 to-blue-900/90" />
+            {/* Subtle Ultra-Light Dark Tint for contrast while keeping image bright and clear */}
+            <div className="absolute inset-0 bg-black/25" />
             
             {/* Dot Pattern Overlay */}
-            <div className="absolute inset-0 opacity-10" 
+            <div className="absolute inset-0 opacity-5" 
                  style={{
                    backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
                    backgroundSize: '30px 30px'

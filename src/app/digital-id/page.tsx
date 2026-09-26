@@ -6,7 +6,9 @@ import { QRCodeSVG } from 'qrcode.react'
 import { v4 as uuidv4 } from 'uuid'
 import { BlockchainBadge } from '@/components/BlockchainBadge'
 import { LanguageSelector } from '@/components/LanguageSelector'
-import { User, FileText, Phone, Calendar, CreditCard } from 'lucide-react'
+import { User, FileText, Phone, Calendar, CreditCard, ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
+import { DoodleBackdrop } from '@/components/layout/DoodleBackdrop'
 
 // Simple inline translation function
 const useTranslation = () => {
@@ -77,38 +79,50 @@ export default function DigitalIDPage() {
 
   if (generatedID) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-8">
-        <div className="max-w-2xl mx-auto px-6">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 text-center">
-            <div className="mb-6">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <User size={40} className="text-green-600" />
-              </div>
-              <h1 className="text-3xl font-bold text-gray-800 mb-2">Digital ID Generated!</h1>
-              <BlockchainBadge />
-            </div>
+      <div className="min-h-screen bg-[#F0F8FF] py-12 px-4 relative overflow-hidden flex items-center justify-center">
+        <DoodleBackdrop variant="full" />
+        
+        {/* Top Universal Back to Hub Bar */}
+        <div className="absolute top-4 left-4 z-20">
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-slate-600 hover:text-sky-700 font-semibold transition text-xs bg-white/80 backdrop-blur-md px-3.5 py-2 rounded-full border border-sky-100 shadow-2xs"
+          >
+            <ArrowLeft size={14} />
+            <span>← Back to WayORA Hub</span>
+          </Link>
+        </div>
 
-            <div className="bg-gray-50 rounded-xl p-6 mb-6">
+        <div className="max-w-md w-full mx-auto relative z-10">
+          <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(2,132,199,0.08)] border border-sky-100 p-8 text-center">
+            <div className="mb-4">
+              <BlockchainBadge verified={true} />
+            </div>
+            
+            <h2 className="text-2xl font-black text-[#0C2340] mb-2">Digital Tourist ID Created</h2>
+            <p className="text-slate-500 text-xs mb-6">Your verifiable safety pass on the blockchain</p>
+
+            <div className="bg-sky-50/70 border border-sky-100 rounded-2xl p-6 mb-6">
               <QRCodeSVG value={JSON.stringify(generatedID)} size={200} className="mx-auto mb-4" />
-              <div className="space-y-2 text-left">
-                <div><strong>ID:</strong> {generatedID.id}</div>
+              <div className="space-y-2 text-left text-xs text-slate-700">
+                <div><strong>ID:</strong> <span className="font-mono">{generatedID.id}</span></div>
                 <div><strong>Name:</strong> {generatedID.name}</div>
                 <div><strong>Valid Until:</strong> {new Date(generatedID.validUntil).toLocaleDateString()}</div>
-                <div><strong>Blockchain Hash:</strong> <span className="font-mono text-xs">{generatedID.blockchainHash}</span></div>
+                <div><strong>Blockchain Hash:</strong> <span className="font-mono text-[11px] text-sky-700">{generatedID.blockchainHash}</span></div>
               </div>
             </div>
 
             <div className="space-y-3">
               <button
                 onClick={handleDashboard}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition"
+                className="w-full bg-sky-600 hover:bg-sky-700 text-white py-3 rounded-2xl font-bold text-xs transition shadow-sm"
               >
                 Go to Dashboard
               </button>
               
               <button
                 onClick={() => window.print()}
-                className="w-full border-2 border-gray-300 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-50 transition"
+                className="w-full border border-slate-200 text-slate-700 py-3 rounded-2xl font-bold text-xs hover:bg-slate-50 transition"
               >
                 Print ID Card
               </button>
@@ -120,19 +134,32 @@ export default function DigitalIDPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-8">
-      <div className="max-w-2xl mx-auto px-6">
+    <div className="min-h-screen bg-[#F0F8FF] py-10 px-4 relative overflow-hidden">
+      <DoodleBackdrop variant="full" />
+
+      <div className="max-w-2xl mx-auto relative z-10">
+        {/* Top Universal Back to Hub Bar */}
+        <div className="mb-4">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-sky-700 font-semibold transition text-xs bg-white/80 backdrop-blur-md px-3.5 py-2 rounded-full border border-sky-100 shadow-2xs"
+          >
+            <ArrowLeft size={14} />
+            <span>← Back to WayORA Hub</span>
+          </Link>
+        </div>
+
         <div className="mb-6 flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-gray-800">{t('digitalId')}</h1>
+          <h1 className="text-2xl font-black text-[#0C2340]">{t('digitalId')}</h1>
           <LanguageSelector />
         </div>
 
-        <div className="bg-white rounded-2xl shadow-2xl p-8">
+        <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(2,132,199,0.08)] border border-sky-100 p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  <User size={16} className="inline mr-2" />
+                <label className="block text-xs font-bold text-slate-700 mb-2">
+                  <User size={15} className="inline mr-1.5 text-sky-600" />
                   Full Name *
                 </label>
                 <input

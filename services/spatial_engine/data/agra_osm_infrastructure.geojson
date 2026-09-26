@@ -1,0 +1,736 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [
+    77.8,
+    27.1,
+    78.1,
+    27.3
+  ],
+  "metadata": {
+    "region": "Agra Tourism Corridor",
+    "source": "OpenStreetMap & Verified GIS Infrastructure",
+    "feature_count": 48
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0421,
+          27.1751
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Taj Mahal Tourist Police Station",
+        "type": "tourist_police",
+        "cctv": "yes",
+        "24_7": "yes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.035,
+          27.1795
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Agra Fort Police Chowki",
+        "type": "chowki",
+        "cctv": "yes",
+        "24_7": "yes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9505,
+          27.2206
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Sikandra Thana & Tourist Kiosk",
+        "type": "thana",
+        "cctv": "yes",
+        "24_7": "yes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.8345,
+          27.2481
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "SUA / Anand Campus Security Command Center",
+        "type": "campus_police",
+        "cctv": "yes",
+        "24_7": "yes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.8335,
+          27.2512
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "NH-19 Keetham Highway Police Checkpost",
+        "type": "highway_post",
+        "cctv": "yes",
+        "24_7": "yes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.882,
+          27.238
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Runakta Police Post",
+        "type": "chowki",
+        "cctv": "yes",
+        "24_7": "yes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.008,
+          27.162
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Agra Cantt Railway Station RPF Command",
+        "type": "rpf_police",
+        "cctv": "yes",
+        "24_7": "yes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.005,
+          27.195
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Hariparvat Police Thana",
+        "type": "thana",
+        "cctv": "yes",
+        "24_7": "yes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.041,
+          27.1745
+        ]
+      },
+      "properties": {
+        "highway": "street_lamp",
+        "lit": "yes",
+        "corridor": "Taj VIP Walkway",
+        "quality": "high_led"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.043,
+          27.176
+        ]
+      },
+      "properties": {
+        "highway": "street_lamp",
+        "lit": "yes",
+        "corridor": "Taj East Gate Approach",
+        "quality": "high_led"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.834,
+          27.2485
+        ]
+      },
+      "properties": {
+        "highway": "street_lamp",
+        "lit": "yes",
+        "corridor": "SUA Anand Main Campus Quad",
+        "quality": "high_led"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.8375,
+          27.247
+        ]
+      },
+      "properties": {
+        "highway": "street_lamp",
+        "lit": "yes",
+        "corridor": "SUA Girls Hostel Avenue",
+        "quality": "high_led"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.8335,
+          27.251
+        ]
+      },
+      "properties": {
+        "highway": "street_lamp",
+        "lit": "yes",
+        "corridor": "NH-19 Agra-Delhi Highway Frontage",
+        "quality": "high_sodium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.95,
+          27.22
+        ]
+      },
+      "properties": {
+        "highway": "street_lamp",
+        "lit": "yes",
+        "corridor": "Sikandra Arterial Road",
+        "quality": "high_led"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.01,
+          27.165
+        ]
+      },
+      "properties": {
+        "highway": "street_lamp",
+        "lit": "yes",
+        "corridor": "Mall Road Tourist Strip",
+        "quality": "high_led"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0425,
+          27.175
+        ]
+      },
+      "properties": {
+        "tourism": "information",
+        "name": "UP Tourism Information Center (Taj East Gate)",
+        "operator": "UP Tourism"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.034,
+          27.179
+        ]
+      },
+      "properties": {
+        "tourism": "information",
+        "name": "ASI Helpdesk (Agra Fort Amar Singh Gate)",
+        "operator": "ASI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0075,
+          27.1615
+        ]
+      },
+      "properties": {
+        "tourism": "information",
+        "name": "Indian Railways Tourist Facilitation Desk",
+        "operator": "IRCTC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0248862,
+          27.1970981
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Jeoni Mandi Police Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.004248,
+          27.2105322
+        ]
+      },
+      "properties": {
+        "addr:city": "Agra",
+        "addr:district": "Agra",
+        "amenity": "police",
+        "name": "New Agra Police Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0120081,
+          27.1701129
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Rakabganj Police Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9971241,
+          27.1809568
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Police Chauki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9840132,
+          27.1702945
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "police choki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9973375,
+          27.1846929
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Police Chauki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0060909,
+          27.1860952
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Police Chowki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9621112,
+          27.1888276
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Police Chowki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9730883,
+          27.1718033
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Police Choki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9836583,
+          27.1773608
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Shaganj Police Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0149181,
+          27.1868116
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Police Choki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0108476,
+          27.1640024
+        ]
+      },
+      "properties": {
+        "addr:city": "Agra",
+        "name": "India Tourism Office",
+        "tourism": "information"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0020282,
+          27.1807733
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Thana Nai Ki Mandi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0113638,
+          27.1894012
+        ]
+      },
+      "properties": {
+        "addr:city": "Agra",
+        "addr:street": "Milan Vatika",
+        "amenity": "police",
+        "name": "Police Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9520715,
+          27.2114182
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Police Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9556544,
+          27.1960915
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Police Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0051948,
+          27.2112779
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "New Agra Police Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.9902772,
+          27.1576334
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name:en": "RPF Chauki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0235306,
+          27.1779305
+        ]
+      },
+      "properties": {
+        "name": "The Shahjahani Mahalia (1628-35)",
+        "tourism": "information"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0236,
+          27.1787361
+        ]
+      },
+      "properties": {
+        "name": "Jahangir's chain of justice",
+        "tourism": "information"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0233584,
+          27.1780627
+        ]
+      },
+      "properties": {
+        "name": "Ghaznin - Gate (1030)",
+        "tourism": "information"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0228434,
+          27.1771525
+        ]
+      },
+      "properties": {
+        "name": "The Bengali-Mahal (1565-1569)",
+        "tourism": "information"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0317944,
+          27.1926147
+        ]
+      },
+      "properties": {
+        "name": "Tomb of I'Timad-ud-Daulah",
+        "tourism": "information"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0173652,
+          27.2117331
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Kamla Nagar Police Choki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0413432,
+          27.168983
+        ]
+      },
+      "properties": {
+        "amenity": "police"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0077186,
+          27.1532943
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "Police Station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0077136,
+          27.1331573
+        ]
+      },
+      "properties": {
+        "amenity": "police",
+        "name": "police station"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0373571,
+          27.1486681
+        ]
+      },
+      "properties": {
+        "addr:city": "Agra,Uttar Pradesh",
+        "addr:district": "Agra",
+        "addr:postcode": "282001",
+        "addr:street": "Shamsabad Road",
+        "amenity": "police",
+        "name": "Saheed Nagar Police Station",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0179479,
+          27.1857931
+        ]
+      },
+      "properties": {
+        "amenity": "police"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0421034,
+          27.1693538
+        ]
+      },
+      "properties": {
+        "amenity": "police"
+      }
+    }
+  ]
+}

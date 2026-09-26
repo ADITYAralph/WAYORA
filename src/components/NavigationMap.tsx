@@ -80,9 +80,9 @@ export function NavigationMap({ monument, onClose }: NavigationMapProps) {
       
       mapInstanceRef.current = L.map(mapRef.current).setView(monumentLocation, 13)
 
-      // Add OpenStreetMap tiles
+      // Add OpenStreetMap tiles (styled with dark mode CSS filter)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19
       }).addTo(mapInstanceRef.current)
 

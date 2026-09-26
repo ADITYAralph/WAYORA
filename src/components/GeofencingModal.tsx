@@ -4,111 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { X, Shield, MapPin, AlertTriangle, Eye, EyeOff, Search, AlertCircle } from 'lucide-react'
 import GoBackButton from './GoBackButton' // ✅ NEW: Import Go Back Button
 
-// Fallback data in case import fails
-const REAL_INDIA_TOURIST_ZONES = [
-  {
-    id: 'taj_mahal_main',
-    name: 'Taj Mahal Main Complex',
-    monumentName: 'Taj Mahal',
-    location: { lat: 27.1751, lng: 78.0421 },
-    city: 'Agra',
-    state: 'Uttar Pradesh',
-    type: 'safe',
-    radius: 300,
-    safetyLevel: 9,
-    description: 'UNESCO World Heritage Site with maximum security',
-    emergencyContacts: { police: '100', medical: '108', tourist_helpline: '1363' },
-    facilities: ['CCTV', 'Security', 'First Aid'],
-    riskFactors: ['Overcrowding'],
-    lastUpdated: '2025-09-20',
-    isActive: true
-  },
-  {
-    id: 'red_fort_main',
-    name: 'Red Fort Main Complex',
-    monumentName: 'Red Fort (Lal Qila)',
-    location: { lat: 28.6562, lng: 77.2410 },
-    city: 'New Delhi',
-    state: 'Delhi',
-    type: 'safe',
-    radius: 250,
-    safetyLevel: 8,
-    description: 'Historic Mughal fort with ASI security',
-    emergencyContacts: { police: '100', medical: '102', tourist_helpline: '1363' },
-    facilities: ['ASI Security', 'Metro Station', 'Audio Guides'],
-    riskFactors: ['Overcrowding during holidays'],
-    lastUpdated: '2025-09-20',
-    isActive: true
-  },
-  {
-    id: 'chandni_chowk_market',
-    name: 'Chandni Chowk Market',
-    monumentName: 'Red Fort Area',
-    location: { lat: 28.6506, lng: 77.2334 },
-    city: 'New Delhi',
-    state: 'Delhi',
-    type: 'caution',
-    radius: 400,
-    safetyLevel: 5,
-    description: 'Busy traditional market area',
-    emergencyContacts: { police: '100', medical: '102', tourist_helpline: '1363' },
-    facilities: ['Market Security', 'ATMs', 'Food'],
-    riskFactors: ['Pickpocketing', 'Overcrowding'],
-    lastUpdated: '2025-09-20',
-    isActive: true
-  },
-  {
-    id: 'golden_temple_main',
-    name: 'Golden Temple Complex',
-    monumentName: 'Harmandir Sahib (Golden Temple)',
-    location: { lat: 31.6200, lng: 74.8765 },
-    city: 'Amritsar',
-    state: 'Punjab',
-    type: 'safe',
-    radius: 300,
-    safetyLevel: 9,
-    description: 'Holiest Sikh shrine with excellent security',
-    emergencyContacts: { police: '100', medical: '108', tourist_helpline: '1363' },
-    facilities: ['Community Security', 'Free Food', 'Medical Aid'],
-    riskFactors: ['Large crowds during festivals'],
-    lastUpdated: '2025-09-20',
-    isActive: true
-  },
-  {
-    id: 'gateway_of_india_main',
-    name: 'Gateway of India',
-    monumentName: 'Gateway of India',
-    location: { lat: 18.9220, lng: 72.8347 },
-    city: 'Mumbai',
-    state: 'Maharashtra',
-    type: 'safe',
-    radius: 200,
-    safetyLevel: 7,
-    description: 'Iconic Mumbai landmark with police presence',
-    emergencyContacts: { police: '100', medical: '108', tourist_helpline: '1363' },
-    facilities: ['Police Booth', 'Boat Services', 'Photography'],
-    riskFactors: ['Sea spray during monsoon'],
-    lastUpdated: '2025-09-20',
-    isActive: true
-  },
-  {
-    id: 'hawa_mahal_main',
-    name: 'Hawa Mahal Palace',
-    monumentName: 'Hawa Mahal (Palace of Winds)',
-    location: { lat: 26.9239, lng: 75.8267 },
-    city: 'Jaipur',
-    state: 'Rajasthan',
-    type: 'safe',
-    radius: 150,
-    safetyLevel: 8,
-    description: 'Famous pink sandstone palace',
-    emergencyContacts: { police: '100', medical: '108', tourist_helpline: '1363' },
-    facilities: ['Security Guards', 'Photography', 'Guided Tours'],
-    riskFactors: ['Heat during summer'],
-    lastUpdated: '2025-09-20',
-    isActive: true
-  }
-]
+import { REAL_INDIA_TOURIST_ZONES } from '@/data/realIndiaZones'
 
 interface GeofencingModalProps {
   isOpen: boolean
@@ -215,10 +111,10 @@ export default function GeofencingModal({ isOpen, onClose }: GeofencingModalProp
         
         mapRef.current = window.L.map(mapContainerRef.current).setView(indiaCenter, 6)
         
-        // Add OpenStreetMap tiles (free)
-        window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        // Add OpenStreetMap raster tiles (styled with dark mode CSS filter)
+        window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
-          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(mapRef.current)
 
         console.log('Map initialized successfully')
@@ -501,7 +397,7 @@ export default function GeofencingModal({ isOpen, onClose }: GeofencingModalProp
               
               <Shield size={28} />
               <div>
-                <h2 className="text-xl font-bold">SafePath Live Geofencing</h2>
+                <h2 className="text-xl font-bold">WayORA Live Geofencing</h2>
                 <p className="text-green-100 text-sm">Real-time safety zones across India&apos;s tourist destinations</p>
               </div>
             </div>
@@ -690,10 +586,10 @@ export default function GeofencingModal({ isOpen, onClose }: GeofencingModalProp
 
             {/* Selected Zone Details */}
             {selectedZone && (
-              <div className="p-4 bg-blue-50 border-t">
-                <h3 className="font-semibold mb-2">Zone Details</h3>
-                <div className="space-y-2">
-                  <h4 className="font-medium">{selectedZone.name}</h4>
+              <div className="p-4 bg-blue-50 border-t text-[#808080]">
+                <h3 className="font-semibold mb-2 text-[#808080]">Zone Details</h3>
+                <div className="space-y-2 text-[#808080]">
+                  <h4 className="font-medium text-[#808080]">{selectedZone.name}</h4>
                   <p className="text-sm text-gray-600">{selectedZone.description}</p>
                   
                   <div className="text-sm">

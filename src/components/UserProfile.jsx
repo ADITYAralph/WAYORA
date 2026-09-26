@@ -5,7 +5,7 @@ const UserProfile = ({
   user = { 
     name: "Aditya Kaushik", 
     profilePic: "/api/placeholder/40/40",
-    email: "aditya@safepath.com",
+    email: "aditya@wayora.com",
     uid: "",
     emailVerified: false
   },
@@ -43,6 +43,22 @@ const UserProfile = ({
 
   const menuOptions = [
     {
+      icon: '🛡️',
+      label: 'Tourist Safety Portal',
+      action: () => {
+        setIsDropdownOpen(false);
+        window.location.href = '/dashboard';
+      }
+    },
+    {
+      icon: '🏢',
+      label: 'Authority Command Center',
+      action: () => {
+        setIsDropdownOpen(false);
+        window.location.href = '/dashboard/authority';
+      }
+    },
+    {
       icon: '👤',
       label: 'Edit Profile',
       action: () => {
@@ -60,7 +76,7 @@ const UserProfile = ({
     },
     {
       icon: '📊',
-      label: 'Dashboard',
+      label: 'Personal Analytics',
       action: () => {
         setIsDropdownOpen(false);
         window.location.href = '/user-dashboard';
